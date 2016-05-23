@@ -10,32 +10,12 @@ namespace MenuDrawer
 {
     public partial class MasterPage : ContentPage
     {
-        public ListView ListView { get { return listView; } }
+        //public ListView ListView { get { return listView; } }
+        public MasterPageViewModel mpVM = new MasterPageViewModel();
         public MasterPage()
         {
             InitializeComponent();
-
-            var masterPageItems = new List<MasterPageItem>();
-            masterPageItems.Add(new MasterPageItem
-            {
-                Title = "Contacts",
-                IconSource = "icon.png",
-                TargetType = typeof(ContactsPage)
-            });
-            masterPageItems.Add(new MasterPageItem
-            {
-                Title = "TodoList",
-                IconSource = "icon.png",
-                TargetType = typeof(TodoListPage)
-            });
-            masterPageItems.Add(new MasterPageItem
-            {
-                Title = "Reminders",
-                IconSource = "icon.png",
-                TargetType = typeof(ReminderPage)
-            });
-
-            listView.ItemsSource = masterPageItems;
+            this.BindingContext = mpVM;
         }
     }
 }
