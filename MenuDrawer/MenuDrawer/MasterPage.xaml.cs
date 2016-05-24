@@ -10,7 +10,7 @@ namespace MenuDrawer
 {
     public partial class MasterPage : ContentPage
     {
-        //public ListView ListView { get { return listView; } }
+        public ListView ListView { get { return listView; } }
         public MasterPageViewModel mpVM = new MasterPageViewModel();
         public MasterPage()
         {

@@ -6,7 +6,7 @@
              Title="Personal Organiser">
   <ContentPage.Content>
     <StackLayout VerticalOptions="FillAndExpand">
-      <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None" ItemsSource="{Binding ListMPI}" SelectedItem="{Binding MpiSelecionado}">
+      <ListView x:Name="listView" VerticalOptions="FillAndExpand" SeparatorVisibility="None" ItemsSource="{Binding ListMPI}">
         <ListView.ItemTemplate>
           <DataTemplate>
             <ImageCell Text="{Binding Title}" ImageSource="{Binding IconSource}" />

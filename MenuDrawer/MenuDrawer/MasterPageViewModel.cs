@@ -12,10 +12,6 @@ namespace MenuDrawer
     public class MasterPageViewModel : BaseViewModel
     {
         private ObservableCollection<MasterPageItem> listMPI;
-        private MasterPageItem mpiSelecionado;
-        private int indexMPI;
-        private NavigationPage NP;
-
         public MasterPageViewModel()
         {
             FillList();
@@ -35,44 +31,7 @@ namespace MenuDrawer
             }
         }
 
-        public MasterPageItem MpiSelecionado
-        {
-            get
-            {
-                return mpiSelecionado;
-            }
-
-            set
-            {
-                mpiSelecionado = value;
-                this.Notify("MpiSelecionado");
-            }
-        }
-
-        private NavigationPage Navegar()
-        {
-            if (mpiSelecionado != null)
-                return new NavigationPage((Page)Activator.CreateInstance(mpiSelecionado.TargetType));
-            else
-                return null;
-
-        }
-
-        public int IndexMPI
-        {
-            get
-            {
-                return indexMPI;
-            }
-
-            set
-            {
-                indexMPI = value;
-                MpiSelecionado = ListMPI[IndexMPI];
-                this.Notify("IndexMPI");
-
-            }
-        }
+       
 
         private void FillList()
         {
